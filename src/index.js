@@ -1,14 +1,11 @@
-import './sass/main.scss';
-import Menu from './menu.hbs'
-import lists from './menu.json'
+import './sass/main.scss';//было
+import Menu from './menu.hbs'//разметка элемента меню которая должна получаться по шаблону
+import lists from './menu.json'// список в  меню
 
-const PriceMenu = document.querySelector('.js-menu');
-
-const MenuCall = CreateMenuCall(lists);
-PriceMenu.insertAdjacentHTML('beforeend', MenuCall);
+const MenuList = document.querySelector('.js-menu');//разметка index.html  куда надо ложить меню
+//console.log(PriceMenu);
+const MenuCall = CreateMenuCall(lists);//функция со списком меню
+MenuList.insertAdjacentHTML('beforeend', MenuCall);
 function CreateMenuCall(lists) {
-  //return lists.map(Menu).join('');
-  return Menu(lists);
- }
-//console.log(PriceMenu());
-PriceMenu.insertAdjacentHTML('beforeend', MenuCall);
+  return lists.map(Menu).join('');
+}

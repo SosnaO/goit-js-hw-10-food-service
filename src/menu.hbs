@@ -1,6 +1,3 @@
-{{#each this}}
-
-
 <li class="menu__item">
   <article class="card">
     <img src="{{image}}" alt="{{name}}" class="card__image" />
@@ -14,13 +11,14 @@
       <p class="card__descr">"{{description}}"
       </p>
 
-      <ul class="tag-list">
-        <li class="tag-list__item">"{{ingredients[0]}}"</li>
-        <li class="tag-list__item">"{{ingredients[1]}}"</li>
-        <li class="tag-list__item">"{{ingredients[2]}}"</li>
-        <li class="tag-list__item">"{{ingredients[3]}}"</li>
-        <li class="tag-list__item">"{{ingredients[4]}}"</li>
-        <li class="tag-list__item">"{{ingredients[5]}}"</li>
+      <ul class="tag-list">{{#each ingredients}}
+        <li class="tag-list__item">"{{this}}"</li>
+        {{!-- <li class="tag-list__item">"{{ingredients}}"</li>
+        <li class="tag-list__item">"{{ingredients}}"</li>
+        <li class="tag-list__item">"{{ingredients}}"</li>
+        <li class="tag-list__item">"{{ingredients}}"</li>
+        <li class="tag-list__item">"{{ingredients}}"</li> --}}
+        {{/each}}
       </ul>
     </div>
 
@@ -30,4 +28,3 @@
     </button>
   </article>
 </li>
-{{/each}}
