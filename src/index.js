@@ -1,4 +1,4 @@
-//import './sass/main.scss';
+import './sass/main.scss';
 import Menu from './menu.hbs'
 import lists from './menu.json'
 
