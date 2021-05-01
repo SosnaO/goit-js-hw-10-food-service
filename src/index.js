@@ -15,17 +15,19 @@ toggle.addEventListener('change', onSwitchToggle);
 
 if (localStorage.getItem('theme') === Theme.DARK) {
   toggle.checked = true;
-   bodyList.add(Theme.DARK);
+  bodyList.add(Theme.DARK);
 }
 
 function onSwitchToggle(event) {
    if (toggle.checked === true)
-  {
+   {
+    bodyList.remove(Theme.LIGHT);
     bodyList.add(Theme.DARK);
     localStorage.setItem('theme', Theme.DARK);
       }
   else {
-    bodyList.remove(Theme.DARK);
+     bodyList.remove(Theme.DARK);
+     bodyList.add(Theme.LIGHT);
     localStorage.removeItem('theme');
    }
 }
