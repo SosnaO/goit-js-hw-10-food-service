@@ -12,11 +12,15 @@ const bodyList = document.body.classList;
 const MenuCall = CreateMenuCall(lists);
 
 toggle.addEventListener('change', onSwitchToggle);
-
+// if (localStorage.getItem('theme') === ' ') {
+//   //toggle.checked = true;
+//   bodyList.add(Theme.LIGHT);
+// }
 if (localStorage.getItem('theme') === Theme.DARK) {
   toggle.checked = true;
   bodyList.add(Theme.DARK);
 }
+else {bodyList.add(Theme.LIGHT); }
 
 function onSwitchToggle(event) {
    if (toggle.checked === true)
